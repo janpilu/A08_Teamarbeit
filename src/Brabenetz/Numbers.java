@@ -1,5 +1,7 @@
 package Brabenetz;
 
+import java.util.Arrays;
+import java.util.Iterator;
 import java.util.LinkedList;
 
 /**
@@ -24,24 +26,42 @@ public class Numbers implements IZahlen {
 	 * @return the sum of the numbers in the collection
 	 */
 	public double getSumme() {
-		// TODO Auto-generated method stub
-		return 0;
+		Iterator<Double> it = numbers.iterator();
+		
+		double returnValue = 0.0;
+		
+		while (it.hasNext()) {
+			returnValue += it.next();
+		}
+		
+		return returnValue;
 	}
 
 	/**
 	 * @return the minimum number of the collection
+	 * @throws NullPointerException
 	 */
 	public double getMinimum() {
-		// TODO Auto-generated method stub
-		return 0;
+		if (numbers == null || numbers.size() == 0)
+			throw new NullPointerException();
+		
+		Object[] helpArray = numbers.toArray();
+		Arrays.sort(helpArray);
+		
+		return (double) helpArray[0];
 	}
 
 	/**
 	 * @return the maximum number of the collection
 	 */
 	public double getMaximum() {
-		// TODO Auto-generated method stub
-		return 0;
+		if (numbers == null || numbers.size() == 0)
+			throw new NullPointerException();
+		
+		Object[] helpArray = numbers.toArray();
+		Arrays.sort(helpArray);
+		
+		return (double) helpArray[helpArray.length-1];
 	}
 
 	/**
@@ -50,7 +70,7 @@ public class Numbers implements IZahlen {
 	 * @param value the value to be added
 	 */
 	public void add(double value) {
-		
+		this.numbers.add(value);
 	}
 	
 }
