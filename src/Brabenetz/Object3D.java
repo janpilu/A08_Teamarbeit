@@ -23,9 +23,8 @@ public class Object3D extends Object2D implements IRaumInhalt {
 	 * 
 	 */
 	@Override
-	public double getRaumInhalt() {
-		
-		return 0;
+	public double getRaumInhalt() {		
+		return getFlaeche() * height;
 	}
 
 }
