@@ -1,6 +1,7 @@
 package Brabenetz;
 
 /**
+ * Interface for 3D-objects that provides a method for calculating the volume
  * 
  * @author Alexander Strasser
  * @version 2016-10-11
