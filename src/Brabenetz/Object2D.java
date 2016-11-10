@@ -1,16 +1,20 @@
 package Brabenetz;
 
 /**
- * Provides functions for calculating the area of Circle, Rect and Triangle
+ * Provides functions for calculating the area of circles, rectangles and triangles
+ * 
  * @author Michael Ebenstein
- * @version 10.11.2016
+ * @version 2016-11-10
+ * 
  */
 public class Object2D implements IFlaeche{
 	protected double data2D[];
 	
 	/**
 	 * Constructor for a circle
+	 * 
 	 * @param radius of the circle
+	 * 
 	 */
 	public Object2D(double radius){
 		data2D = new double[1];
@@ -18,9 +22,10 @@ public class Object2D implements IFlaeche{
 	}
 	
 	/**
-	 * Constructor for Rect
-	 * @param width of the Rect
-	 * @param length of the Rect(width)
+	 * Constructor for rectangles
+	 * 
+	 * @param width of the rectangle
+	 * @param length of the rectangle
 	 */
 	public Object2D(double width,double length){
 		data2D = new double[2];
@@ -29,7 +34,7 @@ public class Object2D implements IFlaeche{
 	}
 	
 	/**
-	 * Constructor for Triangle
+	 * Constructor for triangles
 	 * @param a side
 	 * @param b side
 	 * @param c side
@@ -44,6 +49,7 @@ public class Object2D implements IFlaeche{
 	@Override
 	/**
 	 * @see IFlaeche.java
+	 * 
 	 */
 	public double getFlaeche() {
 		if(data2D.length == 1)return data2D[0]*data2D[0]*Math.PI;
@@ -54,5 +60,4 @@ public class Object2D implements IFlaeche{
 		}
 		return 0;
 	}
-
 }
