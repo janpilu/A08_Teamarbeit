@@ -6,7 +6,7 @@ package Brabenetz;
 /**
  * @author Michael Ebenstein
  * @version 1.0
- *
+ * Proviedes functions for calculating the area of
  */
 public class Object2D implements IFlaeche{
 	protected double data2D[];
@@ -16,10 +16,10 @@ public class Object2D implements IFlaeche{
 		data2D[0] = radius;
 	}
 	
-	public Object2D(double width,double height){
+	public Object2D(double width,double length){
 		data2D = new double[2];
 		data2D[0] = width;
-		data2D[1] = height;
+		data2D[1] = length;
 	}
 	
 	public Object2D(double a,double b,double c){
