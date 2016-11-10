@@ -6,22 +6,37 @@ package Brabenetz;
 /**
  * @author Michael Ebenstein
  * @version 1.0
- * Proviedes functions for calculating the area of
+ * Provides functions for calculating the area of Circle, Rect and Triangle
  */
 public class Object2D implements IFlaeche{
 	protected double data2D[];
 	
+	/**
+	 * Constructor for a circle
+	 * @param radius of the circle
+	 */
 	public Object2D(double radius){
 		data2D = new double[1];
 		data2D[0] = radius;
 	}
 	
+	/**
+	 * Constructor for Rect
+	 * @param width of the Rect
+	 * @param length of the Rect(width)
+	 */
 	public Object2D(double width,double length){
 		data2D = new double[2];
 		data2D[0] = width;
 		data2D[1] = length;
 	}
 	
+	/**
+	 * Constructor for Triangle
+	 * @param a side
+	 * @param b side
+	 * @param c side
+	 */
 	public Object2D(double a,double b,double c){
 		data2D = new double[3];
 		data2D[0] = a;
