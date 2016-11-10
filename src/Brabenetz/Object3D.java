@@ -47,6 +47,17 @@ public class Object3D extends Object2D implements IRaumInhalt {
 	}
 	
 	/**
+	 * Constructor for a prism with a circle, a triangle or a rectangle
+	 * 
+	 * @param object2D the base area as Object2D object
+	 * @param height height of the prism
+	 */
+	public Object3D(Object2D object2D, double height) {
+		super(object2D);
+		this.height = height;
+	}
+	
+	/**
 	 * @see IRaumInhalt
 	 * 
 	 */
