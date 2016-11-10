@@ -1,12 +1,9 @@
 package Brabenetz;
-/**
- * 
- */
 
 /**
- * @author Michael Ebenstein
- * @version 1.0
  * Provides functions for calculating the area of Circle, Rect and Triangle
+ * @author Michael Ebenstein
+ * @version 10.11.2016
  */
 public class Object2D implements IFlaeche{
 	protected double data2D[];
