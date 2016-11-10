@@ -10,20 +10,23 @@ import java.util.LinkedList;
  * 
  * @author Peter Fuchs
  * @version 2016-11-10
+ * 
  */
 public class Numbers implements IZahlen {
 	
 	private LinkedList<Double> numbers;
 	
 	/**
-	 * Constructor
+	 * Constructor that initializes numbers with a new LinkedList
+	 * 
 	 */
 	public Numbers() {
 		this.numbers = new LinkedList<Double>();
 	}
 
 	/**
-	 * @return the sum of the numbers in the collection
+	 * @see IZahlen
+	 * 
 	 */
 	public double getSumme() {
 		Iterator<Double> it = numbers.iterator();
@@ -38,8 +41,9 @@ public class Numbers implements IZahlen {
 	}
 
 	/**
-	 * @return the minimum number of the collection
+	 * @see IZahlen
 	 * @throws NullPointerException
+	 * 
 	 */
 	public double getMinimum() {
 		if (numbers == null || numbers.size() == 0)
@@ -52,7 +56,8 @@ public class Numbers implements IZahlen {
 	}
 
 	/**
-	 * @return the maximum number of the collection
+	 * @see IZahlen
+	 * 
 	 */
 	public double getMaximum() {
 		if (numbers == null || numbers.size() == 0)
@@ -65,9 +70,7 @@ public class Numbers implements IZahlen {
 	}
 
 	/**
-	 * Adds a number to the collection
-	 * 
-	 * @param value the value to be added
+	 * @see IZahlen
 	 */
 	public void add(double value) {
 		this.numbers.add(value);
