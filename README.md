@@ -6,11 +6,18 @@ Aufgaben:
 
     1. Klasse zur Erstellung eines Objektes und Berechnung von Flächen (Rechteck, Kreis und Dreieck)
        Interfache IFlaeche verwenden
+       Ebenstein
+       
     2. Klasse zur Erstellung eines Objektes und Berechnung von Rauminhalten (Pyramide, Kegel und Quader)
        Interface IRaumInhalt verwenden
+       Strasser
+       
     3. Klasse zur Erstellung eines Objektes und Berechnung von Zahlen (Summe, Maximum und Minimum)
        Interface IZahlen verwenden
+       Fuchs
+       
     4. Testklasse für alle anderen Klassen
+       Koiner
 
 Die Aufteilung der Aufgaben im Team ist insoweit frei, dass jeder einen der vier Teile erfüllt.
 
