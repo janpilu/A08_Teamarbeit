@@ -1,7 +1,7 @@
 package Brabenetz;
 
 public class Object3D extends Object2D implements IRaumInhalt {
-	double height;
+	private double height;
 	
 	public Object3D(double radius, double height) {
 		super(radius);
@@ -24,7 +24,6 @@ public class Object3D extends Object2D implements IRaumInhalt {
 	 */
 	@Override
 	public double getRaumInhalt() {
-		
 		
 		return 0;
 	}
