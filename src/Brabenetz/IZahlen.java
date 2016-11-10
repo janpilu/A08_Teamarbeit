@@ -1,20 +1,38 @@
 package Brabenetz;
 
+/**
+ * Interface that provides various method to deal with numbers
+ * 
+ * @author Peter Fuchs
+ * @version 2016-11-10
+ *
+ */
 public interface IZahlen {
+	
 	/**
-	 * @return the sum of the collection
+	 * Returns the sum of the collection
+	 * 
+	 * @return sum of the collection
+	 * 
 	 */
 	public double getSumme();
+	
 	/**
-	 * @return the minimum of the collection
+	 * Returns the minimum value of the collection
+	 * 
+	 * @return minimum of the collection
 	 */
 	public double getMinimum();
+	
 	/**
-	 * @return the maximum of the collection
+	 * Returns the maximum value of the collection
+	 * 
+	 * @return maximum of the collection
 	 */
 	public double getMaximum();
+	
 	/**
-	 * adds a double to the collection
+	 * Adds a double to the collection
 	 * 
 	 * @param value the number that gets added
 	 */
