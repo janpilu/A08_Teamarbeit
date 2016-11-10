@@ -8,7 +8,7 @@ Aufgaben:
        Interfache IFlaeche verwenden
        Ebenstein
        
-    2. Klasse zur Erstellung eines Objektes und Berechnung von Rauminhalten (Pyramide, Kegel und Quader)
+    2. Klasse zur Erstellung eines Objektes und Berechnung von Rauminhalten (Quader, Zylinder und Prisma mit dreieckiger Grundfläche)
        Interface IRaumInhalt verwenden
        Strasser
        
@@ -23,4 +23,4 @@ Die Aufteilung der Aufgaben im Team ist insoweit frei, dass jeder einen der vier
 
 Zur Aufgabe 4 gehört zusätzlich die Verwaltung des Repository auf Github und der Abgabe des Links im Moodle.
 
-Hinweis: Aufgrund des Logs und der Differenzen zum vorigien Commit kann festgestellt werden, wer wann wievieumgesetzt hat!
+Hinweis: Aufgrund des Logs und der Differenzen zum vorigien Commit kann festgestellt werden, wer wann wieviel umgesetzt hat!

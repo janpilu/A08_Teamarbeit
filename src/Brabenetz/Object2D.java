@@ -30,8 +30,13 @@ public class Object2D implements IFlaeche{
 	}
 	
 	@Override
+	/**
+	 * @see IFlaeche.java
+	 */
 	public double getFlaeche() {
-		// TODO Auto-generated method stub
+		if(data.length == 1)return data[0]*data[0]*Math.PI;
+		else if(data.length == 2)return data[0]*data[1];
+		else if(data.length == 3)return 0;
 		return 0;
 	}
 
