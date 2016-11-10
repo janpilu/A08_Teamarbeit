@@ -46,6 +46,15 @@ public class Object2D implements IFlaeche{
 		data2D[2] = c;
 	}
 	
+	/**
+	 * Constructor for Object2D
+	 * @param obj Object2D
+	 */
+	public Object2D(Object2D obj){
+		data2D = obj.data2D;
+	}
+	
+	
 	@Override
 	/**
 	 * @see IFlaeche.java
