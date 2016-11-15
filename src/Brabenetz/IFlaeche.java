@@ -1,7 +1,7 @@
 package Brabenetz;
 
 /**
- * Interface for area
+ * Interface for two dimensional objects
  * 
  * @author Michael Ebenstein
  * @version 2016-11-10
