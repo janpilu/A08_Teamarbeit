@@ -5,7 +5,7 @@ import java.util.Iterator;
 import java.util.LinkedList;
 
 /**
- * This Object has a double-Collection and can return<br>
+ * This class has a double-Collection and can return<br>
  * the largest number, the smallest number and the sum of all the numbers in the collection.<br>
  * 
  * @author Peter Fuchs
