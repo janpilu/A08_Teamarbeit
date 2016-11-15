@@ -17,10 +17,12 @@ public class Object3D extends Object2D implements IRaumInhalt {
 	 * 
 	 * @param radius radius of the cylinder
 	 * @param height height of the cylinder
+	 * @throws InvalidAttributeValueException if height is negative
 	 */
-	public Object3D(double radius, double height) {
+	public Object3D(double radius, double height) throws InvalidAttributeValueException {
 		super(radius);
-		this.height = height;
+		if((this.height = height) < 0)
+			throw new InvalidAttributeValueException();
 	}
 	
 	/**
@@ -29,10 +31,13 @@ public class Object3D extends Object2D implements IRaumInhalt {
 	 * @param length length of the cuboid
 	 * @param width width of the cuboid
 	 * @param height height of the cuboid
+	 * @throws InvalidAttributeValueException if height is negative
+	 * 
 	 */
-	public Object3D(double length, double width, double height) {
+	public Object3D(double length, double width, double height) throws InvalidAttributeValueException {
 		super(length, width);
-		this.height = height;
+		if((this.height = height) < 0)
+			throw new InvalidAttributeValueException();
 	}
 	
 	/**
@@ -46,7 +51,8 @@ public class Object3D extends Object2D implements IRaumInhalt {
 	 */
 	public Object3D(double a, double b, double c, double height) throws InvalidAttributeValueException {
 		super(a, b, c);
-		this.height = height;
+		if((this.height = height) < 0)
+			throw new InvalidAttributeValueException();
 	}
 	
 	/**
