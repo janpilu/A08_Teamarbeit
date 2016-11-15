@@ -20,7 +20,7 @@ public class Testklasse {
 		String error_msg= "";
 		
 		//test if constructors do the same
-		System.out.println("Test 1(constructors+getFlaeche()):");
+		System.out.println("Test 1(Object constructors+getRauminhalt()):");
 		for(int i = 0; i < 1000; ++i){
 			double a = Math.random()*2;
 			double b = Math.random()*2;
@@ -58,7 +58,7 @@ public class Testklasse {
 
 		//Test Exceptions
 		error_msg = "failed";
-		System.out.println("Test 2 (exceptions):");
+		System.out.println("Test 2 (Object2D Exceptions):");
 
 		double a = 3, b = 2.123;
 		Object2D o2d;
@@ -74,21 +74,35 @@ public class Testklasse {
 			}
 		}
 		System.out.println("\t"+error_msg);
-		/*
+
 		
-		
-		error_msg = "successful";
-		System.out.println("Test 3:");
 		Numbers num = new Numbers();
+		error_msg = "Exception wasnt thrown";
+		System.out.println("Test 3(Numbers Exceptions:");
 		try{
 			num.getSumme();
 		}catch(Exception e){
-			
+			try{
+				num.getMinimum();
+			}catch(Exception e1){
+				try{
+					num.getMaximum();
+				}catch(Exception e2){
+					error_msg = "successful";
+				}
+			}
 		}
-		num.getMinimum();
-		num.getMaximum();
 		System.out.println("\t"+error_msg);
-		*/
+		
+		error_msg = "";
+		System.out.println("Test 3(Numbers Exceptions):");
+		num = new Numbers();
+		for(int i = 0; i < 100; ++i){
+			double d = Math.random()*2;
+			num.add(d);
+			num.add(-d);
+		}
+		System.out.println("\tMax:"+num.getMaximum()+" Min:"+num.getMinimum()+" Sum:"+num.getSumme());
 
 	}
 

@@ -30,7 +30,7 @@ public class Numbers implements IZahlen {
 	 * @throws NullPointerException if the collection is null
 	 */
 	public double getSumme() throws NullPointerException {
-		if (numbers == null) throw new NullPointerException();
+		if (numbers == null || numbers.size() == 0) throw new NullPointerException();
 		Iterator<Double> it = numbers.iterator();
 		
 		double returnValue = 0.0;
