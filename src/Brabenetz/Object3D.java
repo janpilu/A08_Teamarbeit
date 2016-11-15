@@ -1,7 +1,5 @@
 package Brabenetz;
 
-import javax.management.InvalidAttributeValueException;
-
 /**
  * Class to create a 3D-object and get the volume of it
  * 
@@ -17,12 +15,12 @@ public class Object3D extends Object2D implements IRaumInhalt {
 	 * 
 	 * @param radius radius of the cylinder
 	 * @param height height of the cylinder
-	 * @throws InvalidAttributeValueException if height is negative
+	 * @throws IllegalArgumentException if height is negative
 	 */
-	public Object3D(double radius, double height) throws InvalidAttributeValueException {
+	public Object3D(double radius, double height) throws IllegalArgumentException {
 		super(radius);
 		if((this.height = height) < 0)
-			throw new InvalidAttributeValueException();
+			throw new IllegalArgumentException();
 	}
 	
 	/**
@@ -31,13 +29,13 @@ public class Object3D extends Object2D implements IRaumInhalt {
 	 * @param length length of the cuboid
 	 * @param width width of the cuboid
 	 * @param height height of the cuboid
-	 * @throws InvalidAttributeValueException if height is negative
+	 * @throws IllegalArgumentException if height is negative
 	 * 
 	 */
-	public Object3D(double length, double width, double height) throws InvalidAttributeValueException {
+	public Object3D(double length, double width, double height) throws IllegalArgumentException {
 		super(length, width);
 		if((this.height = height) < 0)
-			throw new InvalidAttributeValueException();
+			throw new IllegalArgumentException();
 	}
 	
 	/**
@@ -47,12 +45,12 @@ public class Object3D extends Object2D implements IRaumInhalt {
 	 * @param b second side of the base area
 	 * @param c third side of the base area
 	 * @param height height of the prism
-	 * @throws InvalidAttributeValueException 
+	 * @throws IllegalArgumentException 
 	 */
-	public Object3D(double a, double b, double c, double height) throws InvalidAttributeValueException {
+	public Object3D(double a, double b, double c, double height) throws IllegalArgumentException {
 		super(a, b, c);
 		if((this.height = height) < 0)
-			throw new InvalidAttributeValueException();
+			throw new IllegalArgumentException();
 	}
 	
 	/**

@@ -7,9 +7,6 @@ package Brabenetz;
  * @version 2016-11-10
  * 
  */
-
-import javax.management.InvalidAttributeValueException;
-
 public class Object2D implements IFlaeche{
 	protected double data2D[];
 	
@@ -19,9 +16,10 @@ public class Object2D implements IFlaeche{
 	 * @param radius of the circle
 	 * 
 	 */
-	public Object2D(double radius){
+	public Object2D(double radius) throws IllegalArgumentException {
 		data2D = new double[1];
-		data2D[0] = radius;
+		if((data2D[0] = radius) < 0)
+			throw new IllegalArgumentException();
 	}
 	
 	/**
@@ -30,10 +28,10 @@ public class Object2D implements IFlaeche{
 	 * @param width of the rectangle
 	 * @param length of the rectangle
 	 */
-	public Object2D(double width,double length){
+	public Object2D(double width,double length) throws IllegalArgumentException {
 		data2D = new double[2];
-		data2D[0] = width;
-		data2D[1] = length;
+		if((data2D[0] = width) < 0 ||(data2D[1] = length) < 0)
+			throw new IllegalArgumentException();
 	}
 	
 	/**
@@ -41,12 +39,12 @@ public class Object2D implements IFlaeche{
 	 * @param a side
 	 * @param b side
 	 * @param c side
-	 * @throws InvalidAttributeValueException 
+	 * @throws IllegalArgumentException 
 	 */
-	public Object2D(double a,double b,double c) throws InvalidAttributeValueException{
-		if(!((a+b)>c && (a+c)>b && (b+c)>a)){
-			throw new InvalidAttributeValueException();
-		}
+	public Object2D(double a,double b,double c) throws IllegalArgumentException{
+		if(!((a+b)>c && (a+c)>b && (b+c)>a) || a < 0 || b < 0 || c < 0)
+			throw new IllegalArgumentException();
+		
 		data2D = new double[3];
 		data2D[0] = a;
 		data2D[1] = b;
@@ -57,7 +55,7 @@ public class Object2D implements IFlaeche{
 	 * Constructor for Object2D
 	 * @param obj Object2D
 	 */
-	public Object2D(Object2D obj){
+	public Object2D(Object2D obj) {
 		data2D = obj.data2D;
 	}
 	
