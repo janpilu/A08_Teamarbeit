@@ -40,7 +40,7 @@ public class Object2D implements IFlaeche{
 	 * @param a side
 	 * @param b side
 	 * @param c side
-	 * @throws IllegalArgumentException a, b and c cant form a rectangle or one is negative
+	 * @throws IllegalArgumentException if a, b and c cant form a rectangle or one is negative
 	 */
 	public Object2D(double a,double b,double c) throws IllegalArgumentException{
 		if(!((a+b)>c && (a+c)>b && (b+c)>a) || a < 0 || b < 0 || c < 0)
