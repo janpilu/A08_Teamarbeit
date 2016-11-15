@@ -14,7 +14,7 @@ public class Object2D implements IFlaeche{
 	 * Constructor for a circle
 	 * 
 	 * @param radius of the circle
-	 * 
+	 * @throws IllegalArgumentException if radius < 0
 	 */
 	public Object2D(double radius) throws IllegalArgumentException {
 		data2D = new double[1];
@@ -27,6 +27,7 @@ public class Object2D implements IFlaeche{
 	 * 
 	 * @param width of the rectangle
 	 * @param length of the rectangle
+	 * @throws IllegalArgumentException if width or length < 0
 	 */
 	public Object2D(double width,double length) throws IllegalArgumentException {
 		data2D = new double[2];
@@ -39,7 +40,7 @@ public class Object2D implements IFlaeche{
 	 * @param a side
 	 * @param b side
 	 * @param c side
-	 * @throws IllegalArgumentException 
+	 * @throws IllegalArgumentException a, b and c cant form a rectangle or one is negative
 	 */
 	public Object2D(double a,double b,double c) throws IllegalArgumentException{
 		if(!((a+b)>c && (a+c)>b && (b+c)>a) || a < 0 || b < 0 || c < 0)

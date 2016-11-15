@@ -45,7 +45,7 @@ public class Object3D extends Object2D implements IRaumInhalt {
 	 * @param b second side of the base area
 	 * @param c third side of the base area
 	 * @param height height of the prism
-	 * @throws IllegalArgumentException 
+	 * @throws IllegalArgumentException if height is negative
 	 */
 	public Object3D(double a, double b, double c, double height) throws IllegalArgumentException {
 		super(a, b, c);

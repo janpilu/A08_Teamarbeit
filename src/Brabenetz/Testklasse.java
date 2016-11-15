@@ -51,26 +51,45 @@ public class Testklasse {
 		System.out.println("\t"+error_msg);
 
 		//Test Exceptions
-		error_msg = "failed";
+		error_msg = "Exception wasnt thrown";
 		System.out.println("Test 2 (Object2D Exceptions):");
 
 		double a = 3, b = 2.123;
-		Object2D o2d;
 		try{
-			o2d = new Object2D(a,b,a+b+0.001);
+			Object2D o2d = new Object2D(a,b,a+b+0.001);
 		}
 		catch(Exception e){
 			try{
-				o2d = new Object2D(a,b,a+b);
+				Object2D o2d = new Object2D(a,b,a+b);
 			}
 			catch(Exception e1){
-				error_msg = "successful";
+				try{
+				Object3D o3d = new Object3D(-1,0);
+				}
+				catch(Exception e3){
+					try{
+						Object3D o3d = new Object3D(0,-1);
+					}
+					catch(Exception e4){
+						try{
+							Object3D o3d = new Object3D(2,2,Double.MAX_VALUE);
+							Object3D o3d2 = new Object3D(Double.MAX_VALUE,2,Double.MAX_VALUE);
+							o3d.getRaumInhalt();
+							o3d.getRaumInhalt();
+							error_msg = "successful";
+						}catch(Exception e5){
+							error_msg = "failed";
+						}
+					}
+				}
 			}
 		}
 		System.out.println("\t"+error_msg);
 
 		
 		Numbers num = new Numbers();
+		
+		//Exceptions für Numbers
 		error_msg = "Exception wasnt thrown";
 		System.out.println("Test 3(Numbers Exceptions):");
 		try{
@@ -88,6 +107,7 @@ public class Testklasse {
 		}
 		System.out.println("\t"+error_msg);
 		
+		//funktionalität für numbers
 		error_msg = "";
 		System.out.println("Test 4(Numbers functionality):");
 		num = new Numbers();
