@@ -20,12 +20,12 @@ public class Testklasse {
 		String error_msg= "";
 		
 		//test if constructors do the same
-		System.out.println("Test 1:");
+		System.out.println("Test 1(constructors+getFlaeche()):");
 		for(int i = 0; i < 1000; ++i){
-			double a = Math.random()*2-1;
-			double b = Math.random()*2-1;
-			double c = Math.random()*2-1;
-			double d = a+b+(Math.random()*2-1);
+			double a = Math.random()*2;
+			double b = Math.random()*2;
+			double c = Math.random()*2;
+			double d = Math.abs(a-b) + (Math.random() * ((Math.abs(a+b) - Math.abs(a-b))));//(a+b)*(Math.random());
 			
 			if((new Object3D(a,b).getRaumInhalt() - new Object3D(new Object2D(a),b).getRaumInhalt()) != 0.0){
 				error_msg = "Object3D(a,b) != Object3D(Object2D(a),b)";
@@ -39,17 +39,56 @@ public class Testklasse {
 				error_msg += ("Object3D(a,b,c) -> "+new Object3D(a,b,c).getRaumInhalt()+"   Object3D(Object2D(a,b),c) -> "+new Object3D(new Object2D(a,b),c).getRaumInhalt());
 				break;
 			}
-			if(0.0!=  (new Object3D(a,b,d,c).getRaumInhalt() - new Object3D(new Object2D(a,b,d),c).getRaumInhalt()) ){
-				error_msg = "Object3D(a,b,c,d) != Object3D(Object2D(a,b,c),d)\n";
-				error_msg += ("For: a="+a+" b="+b+" c="+d+" d="+c+"\n");
-				error_msg += ("Object3D(a,b,c,d) -> "+new Object3D(a,b,d,c).getRaumInhalt()+"   Object3D(Object2D(a,b,c),d) -> "+new Object3D(new Object2D(a,b,d),c).getRaumInhalt());
+			try{
+				if(0.0!=  (new Object3D(a,b,d,c).getRaumInhalt() - new Object3D(new Object2D(a,b,d),c).getRaumInhalt()) ){
+					error_msg = "Object3D(a,b,c,d) != Object3D(Object2D(a,b,c),d)\n";
+					error_msg += ("For: a="+a+" b="+b+" c="+d+" d="+c+"\n");
+					error_msg += ("Object3D(a,b,c,d) -> "+new Object3D(a,b,d,c).getRaumInhalt()+"   Object3D(Object2D(a,b,c),d) -> "+new Object3D(new Object2D(a,b,d),c).getRaumInhalt());
+					break;
+				}
+			}
+			catch(Exception e){
+				error_msg = "Exception "+e.getMessage()+" For a="+a+" b="+b+" c="+d;
 				break;
 			}
 			error_msg = "successful";
 			
 		}
 		System.out.println("\t"+error_msg);
+
+		//Test Exceptions
+		error_msg = "failed";
+		System.out.println("Test 2 (exceptions):");
+
+		double a = 3, b = 2.123;
+		Object2D o2d;
+		try{
+			o2d = new Object2D(a,b,a+b+0.001);
+		}
+		catch(Exception e){
+			try{
+				o2d = new Object2D(a,b,a+b);
+			}
+			catch(Exception e1){
+				error_msg = "successful";
+			}
+		}
+		System.out.println("\t"+error_msg);
+		/*
 		
+		
+		error_msg = "successful";
+		System.out.println("Test 3:");
+		Numbers num = new Numbers();
+		try{
+			num.getSumme();
+		}catch(Exception e){
+			
+		}
+		num.getMinimum();
+		num.getMaximum();
+		System.out.println("\t"+error_msg);
+		*/
 
 	}
 
