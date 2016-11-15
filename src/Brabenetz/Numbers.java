@@ -45,7 +45,7 @@ public class Numbers implements IZahlen {
 	/**
 	 * @see IZahlen
 	 * 
-	 * @throws NullPointerException if the collection is null or it is empty
+	 * @throws NullPointerException if the list is null or it is empty
 	 */
 	public double getMinimum() throws NullPointerException {
 		if (numbers == null || numbers.size() == 0)
@@ -60,7 +60,7 @@ public class Numbers implements IZahlen {
 	/**
 	 * @see IZahlen
 	 * 
-	 * @throws NullPointerException if the collection is null or it is empty
+	 * @throws NullPointerException if the list is null or it is empty
 	 */
 	public double getMaximum() throws NullPointerException {
 		if (numbers == null || numbers.size() == 0)
