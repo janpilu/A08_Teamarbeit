@@ -1,5 +1,7 @@
 package Brabenetz;
 
+import javax.management.InvalidAttributeValueException;
+
 /**
  * Class to create a 3D-object and get the volume of it
  * 
@@ -40,8 +42,9 @@ public class Object3D extends Object2D implements IRaumInhalt {
 	 * @param b second side of the base area
 	 * @param c third side of the base area
 	 * @param height height of the prism
+	 * @throws InvalidAttributeValueException 
 	 */
-	public Object3D(double a, double b, double c, double height) {
+	public Object3D(double a, double b, double c, double height) throws InvalidAttributeValueException {
 		super(a, b, c);
 		this.height = height;
 	}

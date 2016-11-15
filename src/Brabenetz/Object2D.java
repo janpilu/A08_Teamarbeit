@@ -8,7 +8,7 @@ package Brabenetz;
  * 
  */
 
-import javax.management.InvalidAttributeValueException
+import javax.management.InvalidAttributeValueException;
 
 public class Object2D implements IFlaeche{
 	protected double data2D[];
@@ -41,8 +41,12 @@ public class Object2D implements IFlaeche{
 	 * @param a side
 	 * @param b side
 	 * @param c side
+	 * @throws InvalidAttributeValueException 
 	 */
-	public Object2D(double a,double b,double c){
+	public Object2D(double a,double b,double c) throws InvalidAttributeValueException{
+		if(!((a+b)>c && (a+c)>b && (b+c)>a)){
+			throw new InvalidAttributeValueException();
+		}
 		data2D = new double[3];
 		data2D[0] = a;
 		data2D[1] = b;
@@ -69,8 +73,7 @@ public class Object2D implements IFlaeche{
 		else if(data2D.length == 3){
 			double s = (data2D[0]+data2D[1]+data2D[2])/2;
 			double res = s*(s-data2D[0])*(s-data2D[1])*(s-data2D[2]);
-			if(res < 0) throw new InvalidAttributeValueException();
-			return Math.sqrt();
+			return Math.sqrt(res);
 		}
 		return 0;
 	}
