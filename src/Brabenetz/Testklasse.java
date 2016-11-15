@@ -78,7 +78,7 @@ public class Testklasse {
 		
 		Numbers num = new Numbers();
 		error_msg = "Exception wasnt thrown";
-		System.out.println("Test 3(Numbers Exceptions:");
+		System.out.println("Test 3(Numbers Exceptions):");
 		try{
 			num.getSumme();
 		}catch(Exception e){
@@ -95,7 +95,7 @@ public class Testklasse {
 		System.out.println("\t"+error_msg);
 		
 		error_msg = "";
-		System.out.println("Test 3(Numbers Exceptions):");
+		System.out.println("Test 4(Numbers functionality):");
 		num = new Numbers();
 		for(int i = 0; i < 100; ++i){
 			double d = Math.random()*2;
