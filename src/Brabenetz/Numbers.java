@@ -27,8 +27,10 @@ public class Numbers implements IZahlen {
 	/**
 	 * @see IZahlen
 	 * 
+	 * @throws NullPointerException if the collection is null
 	 */
-	public double getSumme() {
+	public double getSumme() throws NullPointerException {
+		if (numbers == null) throw new NullPointerException();
 		Iterator<Double> it = numbers.iterator();
 		
 		double returnValue = 0.0;
@@ -42,10 +44,10 @@ public class Numbers implements IZahlen {
 
 	/**
 	 * @see IZahlen
-	 * @throws NullPointerException
 	 * 
+	 * @throws NullPointerException if the collection is null or it is empty
 	 */
-	public double getMinimum() {
+	public double getMinimum() throws NullPointerException {
 		if (numbers == null || numbers.size() == 0)
 			throw new NullPointerException();
 		
@@ -58,8 +60,9 @@ public class Numbers implements IZahlen {
 	/**
 	 * @see IZahlen
 	 * 
+	 * @throws NullPointerException if the collection is null or it is empty
 	 */
-	public double getMaximum() {
+	public double getMaximum() throws NullPointerException {
 		if (numbers == null || numbers.size() == 0)
 			throw new NullPointerException();
 		
@@ -71,8 +74,11 @@ public class Numbers implements IZahlen {
 
 	/**
 	 * @see IZahlen
+	 * 
+	 * @throws NullPointerException if the collection is null
 	 */
-	public void add(double value) {
+	public void add(double value) throws NullPointerException {
+		if (numbers == null) throw new NullPointerException();
 		this.numbers.add(value);
 	}
 	
