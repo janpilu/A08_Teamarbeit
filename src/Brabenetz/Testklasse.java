@@ -9,12 +9,6 @@ package Brabenetz;
  *
  */
 public class Testklasse {
-
-	/**
-	 * Main method
-	 * 
-	 * @param args
-	 */
 	public static void main(String[] args) {
 
 		String error_msg= "";
